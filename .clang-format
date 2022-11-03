@@ -1,0 +1,14 @@
+BasedOnStyle: WebKit
+IndentWidth: 4
+ColumnLimit: 100
+AlignConsecutiveMacros: true
+PointerAlignment: Right
+AlignEscapedNewlines: Left
+ConstructorInitializerAllOnOneLineOrOnePerLine: true
+AllowAllArgumentsOnNextLine: true
+AllowAllParametersOfDeclarationOnNextLine: true
+BinPackArguments: true
+BinPackParameters: true
+AlwaysBreakTemplateDeclarations: MultiLine
+AlignAfterOpenBracket: AlwaysBreak
+AlignArrayOfStructures: Left

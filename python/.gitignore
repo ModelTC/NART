@@ -1,0 +1,6 @@
+__pycache__/
+*.so
+*.bin
+.idea
+tmp
+engine.bin.json

@@ -1,0 +1,30 @@
+{                                  
+    "default_net_type_token":"tensorrt",
+    "rand_input": false,
+ 
+    "量化用数据数量": "int",
+    "data_num": 100,
+ 
+    "量化数据路径": "dict<str, str>。不进行离线量化则不写",
+    "input_path_map": {
+        "输入张量名": "目录路径",
+        "data": "{存放data张量的量化用数据的目录路径，该路径下应包含0.bin, 1.bin, ... , {data_num-1}.bin文件}"
+    },
+
+    "tensorrt": {
+        "是否使用fp16": "bool (默认：false)",
+        "use_fp16": true,
+ 
+        "是否使用int8离线量化": "bool (默认：false) (由于tensorrt7的一个bug，离线量化与dynamic_shape不能同时使用)",
+        "use_int8": true,
+ 
+        "是否使用动态shape": "为true时，转换出的模型的尺寸可在min_shapes和max_shapes范围内设置；为false时即固定为模型中的尺寸。目前在离线量化时要求设置为false.默认：true",
+        "dynamic_shape": false,
+ 
+        "需要使用fp32计算的layer名字列表": "list<string>。可以用于指定部分层使用fp32计算，以解决精度问题",
+        "fp32_layers": [],
+
+        "手动设置张量的动态范围": "dict<str, float>。如果不需要，可不写或将值置为null。注：同时手动配置张量动态范围和使用离线量化可能有坑",
+        "blob_range": { "117": 32.914 }
+    }
+}

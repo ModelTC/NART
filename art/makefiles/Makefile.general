@@ -1,0 +1,29 @@
+ifndef ART_ROOT
+$(error ART_ROOT must be specified)
+endif
+
+export ART_ROOT
+
+ifndef PROJECT_NAME
+$(error PROJECT_NAME must be specified)
+endif
+
+BUILD_TYPE ?= RELEASE
+BUILD_DIR ?= build
+
+.PHONY: all test modules
+all: static_lib shared_lib modules
+	@ln -sf $(BUILD_DIR)/lib ./
+
+modules: static_lib shared_lib
+
+CLEAN_OBJS += lib
+CLEAN_OBJS += $(BUILD_DIR)
+
+modules:
+	@$(foreach i, $(MODULES), \
+		$(MAKE) -I$(ART_ROOT) BUILD_DIR=$(abspath $(BUILD_DIR)/modules/$(i)) -C $(ART_ROOT)/modules/$(i) && \
+		ln -sf $(abspath $(BUILD_DIR))/modules/$(i)/lib/* $(BUILD_DIR)/lib/;)
+
+
+include $(ART_ROOT)/makefiles/common.mk

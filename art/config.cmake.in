@@ -1,0 +1,5 @@
+@PACKAGE_INIT@
+
+include("${CMAKE_CURRENT_LIST_DIR}/nart_case_targets.cmake")
+
+check_required_components(nart_case_static nart_case_include)

@@ -1,0 +1,29 @@
+{                                   
+    "默认网络类型":"[cuda_quant, cuda, default]",
+    "default_net_type_token":"cuda_quant",
+
+    "是否使用随机输入":"需要显示指定",
+    "rand_input":false,
+
+    "设置某一层的后端":"dict",
+    "set_net_type":{
+        "layer_name": "module_name[default, cuda]"
+    },                                  
+
+    "data_num": 1,                 
+
+    "各个module的配置": "dict",
+    "cuda_quant": { 
+        "是否使用对称量化": "bool",
+        "symmetric": true,        
+
+        "use_gpu": false,
+        "device": 0, 
+
+        "默认量化bit数": "int",
+        "bit_width": 8,
+
+        "量化参数文件": "str",
+        "qparams_file": "out_qparams.json"
+    }                               
+}
