@@ -1,9 +1,9 @@
-pybind11<2.7.0
+pybind11
 numpy
-onnx>=1.4.0, <=1.10.3
-protobuf>=3.8.0, <=3.17.3
+onnx
+protobuf
 astor
 coloredlogs
 easydict
-PyYAML>=5.2
-docutils==0.16
+PyYAML
+docutils

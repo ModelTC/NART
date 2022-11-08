@@ -20,4 +20,3 @@ deps
 compile_commands.json
 install/
 python/*egg-info
-build*
