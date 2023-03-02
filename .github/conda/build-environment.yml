@@ -1,0 +1,25 @@
+name: nart
+channels:
+  - defaults
+  - anaconda
+  - pytorch
+  - conda-forge
+dependencies:
+  - cmake
+  - pybind11
+  - protobuf
+  - numpy
+  - onnx
+  - caffe
+  - pytorch==1.8.1
+  - torchvision==0.9.1
+  - torchaudio==0.8.1
+  - cudatoolkit=11.3
+  - cudnn
+  - pip
+  - pip:
+    - astor
+    - coloredlogs
+    - easydict
+    - PyYAML
+    - docutils
